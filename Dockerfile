@@ -29,6 +29,7 @@ CMD java -cp /h2/bin/h2*.jar org.h2.tools.Server \
 FROM h2 
 
 ENV CATALINA_HOME /usr/local/tomcat
+ENV CATALINA OPTS -XX:MaxPermSize=4096m -Xmx4096m
 ENV PATH $CATALINA_HOME/bin:$PATH
 RUN mkdir -p "$CATALINA_HOME"
 WORKDIR $CATALINA_HOME
